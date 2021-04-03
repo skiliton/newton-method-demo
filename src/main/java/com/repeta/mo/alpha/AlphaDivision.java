@@ -4,11 +4,11 @@ import org.ejml.simple.SimpleMatrix;
 
 import java.util.function.Function;
 
-public class FirstMethodAlpha implements AlphaCalculationStrategy{
+public class AlphaDivision implements AlphaCalculationStrategy{
 
     private double eps;
 
-    public FirstMethodAlpha(double eps) {
+    public AlphaDivision(double eps) {
         this.eps = eps;
     }
 

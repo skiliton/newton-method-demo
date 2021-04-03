@@ -6,11 +6,11 @@ import org.ejml.simple.SimpleMatrix;
 
 import java.util.function.Function;
 
-public class SecondMethodAlpha implements AlphaCalculationStrategy{
+public class AlphaMinimization implements AlphaCalculationStrategy{
 
     private MinimizationAlgorithm algorithm;
 
-    public SecondMethodAlpha(MinimizationAlgorithm algorithm) {
+    public AlphaMinimization(MinimizationAlgorithm algorithm) {
         this.algorithm = algorithm;
     }
 

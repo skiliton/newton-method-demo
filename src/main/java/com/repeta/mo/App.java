@@ -1,10 +1,8 @@
 package com.repeta.mo;
 
-import com.repeta.mo.alpha.AlphaCalculationStrategy;
 import com.repeta.mo.alpha.ConstantAlpha;
-import com.repeta.mo.alpha.FirstMethodAlpha;
-import com.repeta.mo.alpha.SecondMethodAlpha;
-import com.repeta.mo.minimization.MinimizationAlgorithm;
+import com.repeta.mo.alpha.AlphaDivision;
+import com.repeta.mo.alpha.AlphaMinimization;
 import com.repeta.mo.minimization.NewtonMethod;
 import org.ejml.simple.SimpleMatrix;
 import java.util.function.Function;
@@ -25,10 +23,10 @@ public class App
         algorithm.setAlphaCS(new ConstantAlpha(1));
         algorithm.minimize(f,initX).print();
 
-        algorithm.setAlphaCS(new FirstMethodAlpha(0.001));
+        algorithm.setAlphaCS(new AlphaDivision(0.001));
         algorithm.minimize(f,initX).print();
 
-        algorithm.setAlphaCS(new SecondMethodAlpha(new NewtonMethod(0.001,new ConstantAlpha(1),150)));
+        algorithm.setAlphaCS(new AlphaMinimization(new NewtonMethod(0.001,new ConstantAlpha(1),150)));
         algorithm.minimize(f,initX).print();
     }
 }
