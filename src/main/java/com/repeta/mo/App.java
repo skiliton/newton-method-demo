@@ -27,5 +27,8 @@ public class App
 
         algorithm.setAlphaCS(new FirstMethodAlpha(0.001));
         algorithm.minimize(f,initX).print();
+
+        algorithm.setAlphaCS(new SecondMethodAlpha(new NewtonMethod(0.001,new ConstantAlpha(1),150)));
+        algorithm.minimize(f,initX).print();
     }
 }
